@@ -17,7 +17,7 @@ public:
 	AEnemyBase();
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | Life")
-		bool b_IsAlive;
+		bool b_IsAlive = true;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | State")
 		bool b_IsStun;
@@ -29,7 +29,7 @@ public:
 		int i_MaxStunCount = 3;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | Life")
-		float f_Life;
+		float f_Life = 1000;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | Distance")
 		float f_Distance;
