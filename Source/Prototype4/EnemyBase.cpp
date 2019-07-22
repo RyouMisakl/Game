@@ -38,8 +38,16 @@ void AEnemyBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 
 float AEnemyBase::CheckDistance()
 {
-  FVector FV_Distance = GetActorLocation() - GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
-  f_Distance = FV_Distance.Size();
+
+	if (GetWorld()) {
+		FVector FV_Distance = GetActorLocation() - GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
+		f_Distance = FV_Distance.Size();
+	}
+	else {
+		UE_LOG(LogTemp, Warning, TEXT("GetWorld Returns Null"));
+		return 0;
+	}
+  
   return f_Distance;
 }
 
@@ -51,4 +59,14 @@ bool AEnemyBase::CheckIfStun() {
 	}
 	i_StunCount--;
 	return false;
+}
+
+bool AEnemyBase::CheckIfInAttackingState() {
+	if (b_IsAlive) {
+		if (!b_IsStun && !b_IsAttacking) {
+			return false;
+		}
+	}
+
+	return true;
 }

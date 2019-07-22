@@ -22,6 +22,9 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | State")
 		bool b_IsStun;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | State")
+		bool b_IsAttacking;
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | Check")
 		int i_StunCount;
 
@@ -33,7 +36,6 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | Distance")
 		float f_Distance;
-
 
 
 protected:
@@ -60,4 +62,6 @@ public:
 	UFUNCTION(BlueprintCallable)
 		bool CheckIfStun();
 
+	UFUNCTION(BlueprintCallable)
+		bool CheckIfInAttackingState();
 };
