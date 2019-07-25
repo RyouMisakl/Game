@@ -35,7 +35,7 @@ void AEnemyBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 
 }
 
-
+//Called to check distance from first player, returns a float value
 float AEnemyBase::CheckDistance()
 {
 
@@ -51,6 +51,7 @@ float AEnemyBase::CheckDistance()
   return f_Distance;
 }
 
+//Called to check if the object is in stun state, returns a bool
 bool AEnemyBase::CheckIfStun() {
 	b_IsStun = true;
 	if (i_StunCount <= 0) {
@@ -61,6 +62,8 @@ bool AEnemyBase::CheckIfStun() {
 	return false;
 }
 
+
+//Called to check if the object is in attacking state, returns a bool
 bool AEnemyBase::CheckIfInAttackingState() {
 	if (b_IsAlive) {
 		if (!b_IsStun && !b_IsAttacking) {

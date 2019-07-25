@@ -29,7 +29,7 @@ public:
 		int i_StunCount;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | Check")
-		int i_MaxStunCount = 3;
+		int i_MaxStunCount = 2;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | Life")
 		float f_Life = 1000;
