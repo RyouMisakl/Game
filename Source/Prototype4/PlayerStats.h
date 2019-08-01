@@ -31,7 +31,7 @@ public:
 		bool b_IsChainAttack;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | State")
-		bool b_IsDodge;
+		bool b_IsDodge = false;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | State")
 		bool b_IFrame;
@@ -62,13 +62,16 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION(BlueprintCallable)
+		UAnimMontage * DodgeFunction(bool b_IsLockOn, float f_Forward, float f_Right, float& f_Launch, float& f_LaunchSide, UAnimMontage* m_DodgeFrontAnim, UAnimMontage* m_DodgeBackAnim, UAnimMontage* m_DodgeRightAnim, UAnimMontage* m_DodgeLeftAnim);
+
 };
 
 
 USTRUCT(BlueprintType)
 struct FSkillTypeStruct
 {
-	GENERATED_BODY()
+	GENERATED_USTRUCT_BODY()
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill Type")
 		UTexture2D* SkillImage;
 
