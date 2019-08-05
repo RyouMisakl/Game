@@ -35,6 +35,7 @@ void APlayerStats::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 //Plays the animation of the dodge but check the value of the current axis to find out which dodge animation to play 
 UAnimMontage * APlayerStats::DodgeFunction(bool b_IsLockOn, float f_Forward, float f_Right, float& f_Launch, float& f_LaunchSide, UAnimMontage* m_DodgeFrontAnim, UAnimMontage* m_DodgeBackAnim, UAnimMontage* m_DodgeRightAnim, UAnimMontage* m_DodgeLeftAnim) {
 	if (b_IsAlive) {
+		//check if the player is using lock on mode
 		if (b_IsLockOn) {
 
 			if (f_Right > 0.0f && !b_IsDodge) {
@@ -67,7 +68,7 @@ UAnimMontage * APlayerStats::DodgeFunction(bool b_IsLockOn, float f_Forward, flo
 				return m_DodgeBackAnim;
 			}
 		}
-
+		//how dodge works when player is not using lock on mode
 		if (f_Forward != 0 || f_Right != 0 && !b_IsDodge) {
 			b_IsDodge = true;
 			b_CanMove = false;
@@ -76,6 +77,7 @@ UAnimMontage * APlayerStats::DodgeFunction(bool b_IsLockOn, float f_Forward, flo
 			return m_DodgeFrontAnim;
 		}
 	}
+	//if player is not using the axis the default mode will be dodge back
 	b_IsDodge = true;
 	b_CanMove = false;
 	b_CanAttack = false;
