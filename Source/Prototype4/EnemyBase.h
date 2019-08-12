@@ -6,6 +6,14 @@
 #include "GameFramework/Character.h"
 #include "EnemyBase.generated.h"
 
+UENUM(BlueprintType)
+enum class EGameEnum : uint8
+{
+	VE_Easy		UMETA(DisplayName="Easy"),
+	VE_Normal	UMETA(DisplayName="Normal"),
+	VE_Hard		UMETA(DisplayName="Hard")
+};
+
 
 UCLASS()
 class PROTOTYPE4_API AEnemyBase : public ACharacter
@@ -32,7 +40,16 @@ public:
 		int i_MaxStunCount = 2;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | Life")
-		float f_Life = 1000;
+		float f_Life;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | Life")
+		float f_MaxLife;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | Damage")
+		float f_AttackDamage;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)
+		EGameEnum GameEnum;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | Distance")
 		float f_Distance;
