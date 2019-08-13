@@ -64,7 +64,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 		UAnimMontage * DodgeFunction(bool b_IsLockOn, float f_Forward, float f_Right, float& f_Launch, float& f_LaunchSide, UAnimMontage* m_DodgeFrontAnim, UAnimMontage* m_DodgeBackAnim, UAnimMontage* m_DodgeRightAnim, UAnimMontage* m_DodgeLeftAnim);
-
+	
+	UFUNCTION(BlueprintCallable)
+		void SureTakeDamage(float f_damage);
 };
 
 
