@@ -78,11 +78,14 @@ UAnimMontage * APlayerStats::DodgeFunction(bool b_IsLockOn, float f_Forward, flo
 		}
 	}
 	//if player is not using the axis the default mode will be dodge back
-	b_IsDodge = true;
-	b_CanMove = false;
-	b_CanAttack = false;
-	f_Launch = -1500.0f;
-	return m_DodgeBackAnim;
+	if (!b_IsDodge) {
+		b_IsDodge = true;
+		b_CanMove = false;
+		b_CanAttack = false;
+		f_Launch = -1500.0f;
+		return m_DodgeBackAnim;
+	}
+	return NULL;
 }
 
 void APlayerStats::SureTakeDamage(float f_damage) 
