@@ -51,6 +51,9 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | Life")
 		float f_Stamina = 100;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | Cheat")
+		bool b_IsGodMode;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
