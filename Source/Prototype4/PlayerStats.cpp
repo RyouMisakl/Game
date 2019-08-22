@@ -87,11 +87,12 @@ UAnimMontage * APlayerStats::DodgeFunction(bool b_IsLockOn, float f_Forward, flo
 
 void APlayerStats::SureTakeDamage(float f_damage) 
 {
-	if (f_Life > 0) {
-		f_Life = f_Life - f_damage;
-		if (f_Life <= 0) {
-			b_IsAlive = false;
+	if (!b_IsGodMode) {
+		if (f_Life > 0) {
+			f_Life = f_Life - f_damage;
+			if (f_Life <= 0) {
+				b_IsAlive = false;
+			}
 		}
 	}
-
 }
