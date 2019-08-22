@@ -54,6 +54,8 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat | Distance")
 		float f_Distance;
 
+	
+
 
 protected:
 	// Called when the game starts or when spawned
