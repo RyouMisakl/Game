@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "PlayerStats.generated.h"
 
+
+
 UCLASS()
 class PROTOTYPE4_API APlayerStats : public ACharacter
 {
@@ -82,4 +84,7 @@ struct FSkillTypeStruct
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill Type")
 		int SkillType;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill Type")
+		UAnimMontage* Skillanimation;
 };

@@ -19,21 +19,10 @@ void AEnemyBase::BeginPlay()
 	
 	i_StunCount = i_MaxStunCount;
 
-	if (GameEnum == EGameEnum::VE_Easy) {
-		f_MaxLife = 500;
-		f_Life = f_MaxLife;
-		f_AttackDamage = 10;
-	}
-	else if (GameEnum == EGameEnum::VE_Normal) {
-		f_MaxLife = 700;
-		f_Life = f_MaxLife;
-		f_AttackDamage = 15;
-	}
-	else if (GameEnum == EGameEnum::VE_Hard) {
-		f_MaxLife = 1000;
-		f_Life = f_MaxLife;
-		f_AttackDamage = 20;
-	}
+	f_MaxLife = 3000;
+	f_Life = f_MaxLife;
+	f_AttackDamage = 20;
+
 
 
 }
