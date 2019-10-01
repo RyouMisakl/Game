@@ -19,7 +19,7 @@ void AEnemyBase::BeginPlay()
 	
 	i_StunCount = i_MaxStunCount;
 
-	f_MaxLife = 3000;
+	f_MaxLife = 1200;
 	f_Life = f_MaxLife;
 	f_AttackDamage = 20;
 
