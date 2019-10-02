@@ -86,5 +86,11 @@ struct FSkillTypeStruct
 		int SkillType;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill Type")
+		float AttackDamage;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill Type")
+		float MoveDistance;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill Type")
 		UAnimMontage* Skillanimation;
 };
